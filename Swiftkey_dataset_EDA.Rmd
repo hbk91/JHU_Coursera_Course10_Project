@@ -58,12 +58,13 @@ close(file_twitter)
 
 ### 4. Summary statistics:
 
-WE have calculated three kinds of summary statistics viz. `line_count`, `word_count` and `words_per_line`. We can observe and infer the following:
-    - The twitter dataset has the highest number of lines. However, it has the least number of words and thus the least number of words per line.
-    - The blogs dataset has on average the longest sentences.
-    - Blogs and News datasets can help us in predicting text after longer sequence of words.
-    - Twitter dataset could be more helpful in predicting texts after small and informal sequence of words.
+We have calculated three kinds of summary statistics viz. `line_count`, `word_count` and `words_per_line`. We can observe and infer the following:
 
+- The twitter dataset has the highest number of lines. However, it has the least number of words and thus the least number of words per line.
+- The blogs dataset has on average the longest sentences.
+- Blogs and News datasets can help us in predicting text after longer sequence of words.
+- Twitter dataset could be more helpful in predicting texts after small and informal sequence of words.
+   
 ```{r, label = 'summary_stats'}
 ## Count lines 
 line_count <- c(length(data_blogs),
@@ -86,7 +87,7 @@ print(data_summary)
 ```
 <br />
 
-### 4. Data Sampling:
+### 5. Data Sampling:
 
 The data currently is too volumnious and can not be processed with the available computing resources. Hence, we would sample 10000 rows at random from each of the three datasets.
 
@@ -102,16 +103,17 @@ remove(data_blogs); remove(data_news); remove(data_twitter) # Freeing up memory
 ```
 <br />
 
-### 5. Data Cleaning:
+### 6. Data Cleaning:
 
 We will be performing the following steps to clean our data:
-    a) Convert the data to only Ascii characters
-    b) Creating a corpus of our dataset with the `tm` package
-    c) Convet all text to lower case
-    d) Removing profane(banned) words
-    e) Removing punctuation
-    f) Removing numbers
-    g) Removing extra whitespaces
+
+a) Convert the data to only Ascii characters
+b) Creating a corpus of our dataset with the `tm` package
+c) Convet all text to lower case
+d) Removing profane(banned) words
+e) Removing punctuation
+f) Removing numbers
+g) Removing extra whitespaces
     
 Note: The code chunk including the list of `banned_words` is hidden 
 
@@ -141,11 +143,12 @@ remove(sample_blogs); remove(sample_news); remove(sample_twitter) # Freeing up m
 ```
 <br />
 
-### 6. Word Clouds:
+### 7. Word Clouds:
 
 In this section we will analyze the frequency of the most common words and we will plot them as a word cloud for each of the datasets. We can infer the following:
-    - Determiners, Prepositions, Pronouns and Conjuctions are generally the most common words. These are more generally called as stopwords.
-    - 'the'and 'you' are most common in all three datasets. However, Twitter dataset has many more stopwords that are quite frequent such as 'have', 'your', 'that' etc. These other stopwords have moderate frequencies realtive to other words in news and blogs datasets.
+
+- Determiners, Prepositions, Pronouns and Conjuctions are generally the most common words. These are more generally called as stopwords.
+- 'the'and 'you' are most common in all three datasets. However, Twitter dataset has many more stopwords that are quite frequent such as 'have', 'your', 'that' etc. These other stopwords have moderate frequencies realtive to other words in news and blogs datasets.
 
 
 ```{r, label = 'one-grams'}
@@ -160,14 +163,15 @@ title("Top 200 most frequent words in Twitter dataset")
 ```
 <br />
 
-### 7. N-Gram Analysis:
+### 8. N-Gram Analysis:
 
 In this section, we will look at the frequency plots of bigrams and trigrams for the three datasets. The observations and inferences are as follows:
-    - Bigrams are dominated by the word 'the' 
-    - Blogs dataset has higher count of bigrams and trigrams followed by news and twitter respectively. This may be due to well formed and structured sentences in blogs.
-    - Blogs and news datasets have more explantory trigrams like 'one of the' and 'as well as' etc.
-    - Twitter dataset has more informal trigrams like 'i need to' and 'i love you' etc.
-    - An interesting trigram in news dataset is 'the united states'. It shows that many of the lines in news talk about the USA and maybe the news articles are primarily drawn from USA news websites.
+
+- Bigrams are dominated by the word 'the' 
+- Blogs dataset has higher count of bigrams and trigrams followed by news and twitter respectively. This may be due to well formed and structured sentences in blogs.
+- Blogs and news datasets have more explantory trigrams like 'one of the' and 'as well as' etc.
+- Twitter dataset has more informal trigrams like 'i need to' and 'i love you' etc.
+- An interesting trigram in news dataset is 'the united states'. It shows that many of the lines in news talk about the USA and maybe the news articles are primarily drawn from USA news websites.
 
 ```{r, label = 'Ngrams'}
 analyzeNgrams <- function(input_data){
@@ -218,11 +222,12 @@ plotNgrams(tdm_twitter$bigram, tdm_twitter$trigram, 130, 25, 'Twitter datset')
 ```
 <br />
 
-### 8. Conclusion:
+### 9. Conclusion:
 
 The analysis above has served us well in providing us a future course of action. First, we will combine the three datasets and split this combined dataset into training and testing datasets. Then, we may adopt several of the following approaches:
-    - TFIDF(term frequency-inverse document frequency) analysis, to reduce the effect of stopwords in our predction algorithms.
-    - Build a N-gram model or a backoff N-gram model.
-    - Build bag-of-words model and determine word embeddings.
+
+- TFIDF(term frequency-inverse document frequency) analysis, to reduce the effect of stopwords in our predction algorithms.
+- Build a N-gram model or a backoff N-gram model.
+- Build bag-of-words model and determine word embeddings.
     
-The exact choice of the model will be dependent upon the performance of the models on the testing datset, speed of the models and computing resources required by the models.
+The exact choice of the model will be dependent upon the performance of the models on the testing dataset, speed of the models and computing resources required by the models.
