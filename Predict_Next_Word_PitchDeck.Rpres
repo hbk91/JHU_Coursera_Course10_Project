@@ -6,49 +6,67 @@ autosize: true
 
 Introduction
 ========================================================
-<font size="6">
-- Have you ever wondered, how keyboards like SwiftKey and Gboard or internet search engines are able to predict what we are going to type next. It almost feels as if they have divine foresight!
-- Natural Language Processing (NLP) is the magic behind the scenes that makes those predictions possible.
-- NLP is the task of automatically extracting and summarizing information from text data. This information can be used for various tasks like Topic Modelling, Next Word Predictions, Machine Translation etc.
-- The ['Predict Next Word App'](https://hbk91.shinyapps.io/Predict_Next_Word/) is an implementation of NLP to predict the next word in English language.
-- This presentation explains the secret sauce of the ['Predict Next Word App'](https://hbk91.shinyapps.io/Predict_Next_Word/)
-- The App works in the following way:
-    - *First,* The App's engine has been trained on a large corpus of English text to make predictions.
-    - *Second,* When a user enters a text, the App cleans the text in the same way as the App's model cleaned its training datasets.
-    - *Third* the App applies the model parametes to the new cleaned input text to make the prediction.
-- Let us understand the above processes in more detail in the following slides.
-</font>
+<div style="font-size:20px">
+<ol>
+    <li> Have you ever wondered, how keyboards like SwiftKey and Gboard or internet search engines are able to predict what we are going to type next. It almost feels as if they have divine foresight! </li>
+    <li> Natural Language Processing (NLP) is the magic behind the scenes that makes those predictions possible. </li>
+    <li> NLP is the task of automatically extracting and summarizing information from text data. This information can be used for various tasks like Topic Modelling, Next Word Predictions, Machine Translation etc. </li>
+    <li> The <a href="https://hbk91.shinyapps.io/Predict_Next_Word/">'Predict Next Word App'</a> is an implementation of NLP to predict the next word in English language. </li>
+    <li> This presentation explains the secret sauce of the <a href="https://hbk91.shinyapps.io/Predict_Next_Word/">'Predict Next Word App'</a>  </li>
+    <li> The App works in the following way:
+        <ul>
+            <li> <i>First,</i> The App's engine has been trained on a large corpus of English text to make predictions. </li>
+            <li> <i>Second,</i> When a user enters a text, the App cleans the text in the same way as the App's model cleaned its training datasets. </li>
+            <li> <i>Third</i> the App applies the model parametes to the new cleaned input text to make the prediction. </li>
+        </ul>
+    </li>
+    <li> Let us understand the above processes in more detail in the following slides. </li>
+<ol>
+</div>
 
 Building the App (1/2): Sourcing, Cleaning and Exploring Datasets
 ========================================================
-<font size="6">
-- Sourcing Datasets:
-    - The App's model uses datasets from three sources viz. Blogs, News and Twitter. The datasets have been provided by 'Data Science Capstone' course offered by John Hopkins University on Coursera. The course itself has obtained the datasets from SwiftKey who have collected the data from publicly available sources using a web crawler.
-- Cleaning Datasets:
-    - 10,000 lines of data have been sampled and joined from each of the three datasets viz. Blogs, News and Twitter.
-    - The data has been meticulously cleaned to remove non ascii characters, numbers, punctuations, extra white spaces and profane words. Then the dataset has been converted to lowercase.
-- Exploring Datasets:
-    - Exploratory graphs, wordclouds and summary statistics have been analyzed for each of the three datasets.
-    - The detailed Exploratory Data Analysis report is available [here](https://rpubs.com/hbk91/SwiftKey_dataset_EDA) 
-</font>
+<div style="font-size:21px">
+<ol>
+    <li> Sourcing Datasets:
+        <ul> 
+                <li> The App's model uses datasets from three sources viz. Blogs, News and Twitter. The datasets have been provided by 'Data Science Capstone' course offered by John Hopkins University on Coursera. The course itself has obtained the datasets from SwiftKey who have collected the data from publicly available sources using a web crawler.</li>
+        </ul> 
+    </li>
+        <li> Cleaning Datasets:
+        <ul>
+            <li> 10,000 lines of data have been sampled and joined from each of the three datasets viz. Blogs, News and Twitter. </li>
+            <li> The data has been meticulously cleaned to remove non ascii characters, numbers, punctuations, extra white spaces and profane words. Then the dataset has been converted to lowercase. </li> 
+        </ul> 
+    </li>
+    <li> Exploring Datasets:
+        <ul>
+            <li> Exploratory graphs, wordclouds and summary statistics have been analyzed for each of the three datasets. </li>
+            <li> The detailed Exploratory Data Analysis report is available <a href="https://rpubs.com/hbk91/SwiftKey_dataset_EDA">here</a> </li>
+        </ul>
+    </li>
+</ol>
+</div>
 
 Building the App (2/2): Prediction Algorithm
 ========================================================
-<font size="6">
-- First, we create the set of bigrams, trigrams and fourgrams from our cleaned dataset.
-- Second, we create a frequency table for each of the N-grams and sort the table by descending order of frequency.
-- Third, an input sentence of length greater than or equal to three, is first searched in the fourgram frequency table using its last three words. If no match is found, the last two words of the sentence are searched in the trigrams table. If still there is no match, we use the bigrams table. 
-- Fourth, for an input sentence of length two, the above process uses only trigrams table and bigrams table. For an inupt sentence of length one, only the bigrams table is used.
-- Fifth, if multiple matches are found at a particular level, the prediction comes from the N-gram match which has the highest frequency among the matches i.e. the N-gram which has the *maximum likelihood*.
-</font>
+<div style="font-size:25px">
+<ol>
+    <li> First, we create the set of bigrams, trigrams and fourgrams from our cleaned dataset. </li>
+    <li> Second, we create a frequency table for each of the N-grams and sort the table by descending order of frequency. </li>
+    <li> Third, an input sentence of length greater than or equal to three, is first searched in the fourgram frequency table using its last three words. If no match is found, the last two words of the sentence are searched in the trigrams table. If still there is no match, we use the bigrams table. </li>
+    <li> Fourth, for an input sentence of length two, the above process uses only trigrams table and bigrams table. For an inupt sentence of length one, only the bigrams table is used. </li>
+    <li> Fifth, if multiple matches are found at a particular level, the prediction comes from the N-gram match which has the highest frequency among the matches i.e. the N-gram which has the <i>maximum likelihood</i>. </li>
+</ol>
+</div>
 
-Links to Source Code and App:
+Links to the Source Code and the App:
 ========================================================
 
-##### - Check out the [Predict Next Word App](https://hbk91.shinyapps.io/Predict_Next_Word/) 
-##### - Check out the [code for the Predict Next Word App](https://github.com/hbk91/JHU_Coursera_Course10_Project)
-#### - Check out the [Exploratory Data Analysis Report](https://rpubs.com/hbk91/SwiftKey_dataset_EDA)
-##### - Check out the [code for this presentation](https://github.com/hbk91/JHU_Coursera_Course10_Project/blob/master/Predict_Next_Word_PitchDeck.Rpres)
+##### - Check out the <a href="https://hbk91.shinyapps.io/Predict_Next_Word/">Predict Next Word App</a> 
+##### - Check out the <a href="https://github.com/hbk91/JHU_Coursera_Course10_Project">code for the Predict Next Word App</a>
+#### - Check out the <a href="https://rpubs.com/hbk91/SwiftKey_dataset_EDA">Exploratory Data Analysis Report</a>
+##### - Check out the <a href="https://github.com/hbk91/JHU_Coursera_Course10_Project/blob/master/Predict_Next_Word_PitchDeck.Rpres">code for this presentation</a>
 <br/><br/><br/>
 # <center> <b> Thanks </b></center>
 
