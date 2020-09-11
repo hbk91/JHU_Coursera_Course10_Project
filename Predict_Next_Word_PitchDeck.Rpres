@@ -10,8 +10,8 @@ Introduction
 - Have you ever wondered, how keyboards like SwiftKey and Gboard or internet search engines are able to predict what we are going to type next. It almost feels as if they have divine foresight!
 - Natural Language Processing (NLP) is the magic behind the scenes that makes those predictions possible.
 - NLP is the task of automatically extracting and summarizing information from text data. This information can be used for various tasks like Topic Modelling, Next Word Predictions, Machine Translation etc.
-- The ['Predict Next Word App'](www.google.com) is an implementation of NLP to predict the next word in English language.
-- This presentation explains the secret sauce of the ['Predict Next Word App'](www.google.com)
+- The ['Predict Next Word App'](https://hbk91.shinyapps.io/Predict_Next_Word/) is an implementation of NLP to predict the next word in English language.
+- This presentation explains the secret sauce of the ['Predict Next Word App'](https://hbk91.shinyapps.io/Predict_Next_Word/)
 - The App works in the following way:
     - *First,* The App's engine has been trained on a large corpus of English text to make predictions.
     - *Second,* When a user enters a text, the App cleans the text in the same way as the App's model cleaned its training datasets.
@@ -45,10 +45,10 @@ Building the App (2/2): Prediction Algorithm
 Links to Source Code and App:
 ========================================================
 
-##### - Check out the [Predict Next Word App](https://hbk91.shinyapps.io/Play_with_CLT) 
-##### - Check out the [code for the Predict Next Word App](https://github.com/hbk91/JHU_Coursera_Course9_Project/tree/master/Play_with_CLT)
+##### - Check out the [Predict Next Word App](https://hbk91.shinyapps.io/Predict_Next_Word/) 
+##### - Check out the [code for the Predict Next Word App](https://github.com/hbk91/JHU_Coursera_Course10_Project)
 #### - Check out the [Exploratory Data Analysis Report](https://rpubs.com/hbk91/SwiftKey_dataset_EDA)
-##### - Check out the [code for this presentation](https://github.com/hbk91/JHU_Coursera_Course9_Project/blob/master/Play_with_CLT_PitchDeck.Rpres)
+##### - Check out the [code for this presentation](https://github.com/hbk91/JHU_Coursera_Course10_Project/blob/master/Predict_Next_Word_PitchDeck.Rpres)
 <br/><br/><br/>
 # <center> <b> Thanks </b></center>
 
