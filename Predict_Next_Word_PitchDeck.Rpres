@@ -17,7 +17,7 @@ Introduction
         <ul>
             <li> <i>First,</i> The App's engine has been trained on a large corpus of English text to make predictions. </li>
             <li> <i>Second,</i> When a user enters a text, the App cleans the text in the same way as the App's model cleaned its training datasets. </li>
-            <li> <i>Third</i> the App applies the model parametes to the new cleaned input text to make the prediction. </li>
+            <li> <i>Third,</i> the App applies the model parametes to the new cleaned input text to make the prediction. </li>
         </ul>
     </li>
     <li> Let us understand the above processes in more detail in the following slides. </li>
