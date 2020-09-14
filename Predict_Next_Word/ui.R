@@ -2,7 +2,7 @@ library(shiny)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
-    titlePanel(title = h1("Next Word Prediction App", align = "center"), 
+    titlePanel(title = h1("Predict Next Word App", align = "center"), 
                windowTitle = 'Predict Next Word'),
     
     sidebarLayout(
