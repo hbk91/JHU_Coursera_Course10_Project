@@ -13,7 +13,7 @@
 
 <meta name="date" content="2020-09-10" />
 
-<title>SwiftKey Dataset: EXploratory Data Analysis</title>
+<title>SwiftKey Dataset: Exploratory Data Analysis</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -376,7 +376,7 @@ summary {
 
 
 
-<h1 class="title toc-ignore">SwiftKey Dataset: EXploratory Data Analysis</h1>
+<h1 class="title toc-ignore">SwiftKey Dataset: Exploratory Data Analysis</h1>
 <h4 class="author">Aman Jindal</h4>
 <h4 class="date">10 September 2020</h4>
 
@@ -386,7 +386,7 @@ summary {
 <div id="introduction" class="section level3">
 <h3>1. Introduction:</h3>
 <p>This is a milestone report for the ‘Data Science Capstone’ course offered by John Hopkins University through Coursera. The goal of the project is to build a Predictive Text Model App.</p>
-<p>As a first step in building the App, we need to source a Natural Language dataset. The dataset have been provided to us by the course itself, which in turn has sourced the dataset from SwiftKey. In this report we have conducted Exploratory Data Analysis (EDA) of the dataset. The dataset comprises of data from three sources viz. blogs, news and twitter in four different languages viz. English, German, Finnish and Russian. We will use the English dataset for building our App. <br /></p>
+<p>As a first step in building the App, we need to source a Natural Language dataset. The datasets have been provided by the course itself, which in turn has sourced the dataset from SwiftKey. In this report we have conducted Exploratory Data Analysis (EDA) of the dataset. The dataset comprises of data from three sources viz. blogs, news and twitter in four different languages viz. English, German, Finnish and Russian. We will use the English dataset for building our App. <br /></p>
 </div>
 <div id="load-libraries" class="section level3">
 <h3>2. Load Libraries:</h3>
@@ -405,6 +405,7 @@ if(!file.exists(destination)){
         download.file(url=url, destfile=destination, method=&#39;curl&#39;)
         unzip(zipfile=destination, exdir=&#39;.&#39;)    
     }
+
 
 file_blogs &lt;- file(&quot;.\\final\\en_US\\en_US.blogs.txt&quot;)
 data_blogs &lt;- readLines(file_blogs,encoding = &quot;UTF-8&quot;,skipNul = TRUE)
@@ -574,7 +575,7 @@ plotNgrams(tdm_twitter$bigram, tdm_twitter$trigram, 130, 25, &#39;Twitter datset
 <h3>9. Conclusion:</h3>
 <p>The analysis above has served us well in providing us a future course of action. First, we will combine the three datasets and split this combined dataset into training and testing datasets. Then, we may adopt several of the following approaches:</p>
 <ul>
-<li>TFIDF(term frequency-inverse document frequency) analysis, to reduce the effect of stopwords in our predction algorithms.</li>
+<li>TFIDF(term frequency-inverse document frequency) analysis, to reduce the effect of stopwords in our prediction algorithms.</li>
 <li>Build a N-gram model or a backoff N-gram model.</li>
 <li>Build bag-of-words model and determine word embeddings.</li>
 </ul>

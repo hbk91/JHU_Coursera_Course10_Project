@@ -1,5 +1,5 @@
 ---
-title: "SwiftKey Dataset: EXploratory Data Analysis"
+title: "SwiftKey Dataset: Exploratory Data Analysis"
 author: "Aman Jindal"
 date: "10 September 2020"
 output: 
@@ -14,7 +14,7 @@ output:
 
 This is a milestone report for the 'Data Science Capstone' course offered by John Hopkins University through Coursera. The goal of the project is to build a Predictive Text Model App.
 
-As a first step in building the App, we need to source a Natural Language dataset. The dataset have been provided to us by the course itself, which in turn has sourced the dataset from SwiftKey. In this report we have conducted Exploratory Data Analysis (EDA) of the dataset. The dataset comprises of data from three sources viz. blogs, news and twitter in four different languages viz. English, German, Finnish and Russian. We will use the English dataset for building our App.
+As a first step in building the App, we need to source a Natural Language dataset. The datasets have been provided by the course itself, which in turn has sourced the dataset from SwiftKey. In this report we have conducted Exploratory Data Analysis (EDA) of the dataset. The dataset comprises of data from three sources viz. blogs, news and twitter in four different languages viz. English, German, Finnish and Russian. We will use the English dataset for building our App.
 <br />
 
 ### 2. Load Libraries:
@@ -41,6 +41,7 @@ if(!file.exists(destination)){
         download.file(url=url, destfile=destination, method='curl')
         unzip(zipfile=destination, exdir='.')    
     }
+
 
 file_blogs <- file(".\\final\\en_US\\en_US.blogs.txt")
 data_blogs <- readLines(file_blogs,encoding = "UTF-8",skipNul = TRUE)
@@ -255,7 +256,7 @@ plotNgrams(tdm_twitter$bigram, tdm_twitter$trigram, 130, 25, 'Twitter datset')
 
 The analysis above has served us well in providing us a future course of action. First, we will combine the three datasets and split this combined dataset into training and testing datasets. Then, we may adopt several of the following approaches:
 
-- TFIDF(term frequency-inverse document frequency) analysis, to reduce the effect of stopwords in our predction algorithms.
+- TFIDF(term frequency-inverse document frequency) analysis, to reduce the effect of stopwords in our prediction algorithms.
 - Build a N-gram model or a backoff N-gram model.
 - Build bag-of-words model and determine word embeddings.
     
